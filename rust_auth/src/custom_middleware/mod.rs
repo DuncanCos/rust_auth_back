@@ -17,7 +17,7 @@ pub async fn test_middleware(session: Session, req: Request, next: Next) -> impl
       
 
     if is_valid {
-        (StatusCode::UNAUTHORIZED, format!("not connected {:?}",session)).into_response()
+        (StatusCode::UNAUTHORIZED, format!("not connected middleware")).into_response()
     }else{
         next.run(req).await
     }

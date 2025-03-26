@@ -8,7 +8,6 @@ use crate::controllers::users_controllers;
 
 pub fn user_routing() -> Router {
     let app = Router::new()
-        .route("/subscribe", post(users_controllers::subscribe))
         .route("/test_session", get(users_controllers::test_session))
         .route("/user", get(users_controllers::users))
         .route("/users", get(users_controllers::all_users))
